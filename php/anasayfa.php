@@ -180,6 +180,28 @@
           <?php } ?>
 
           <hr/>
+
+          <!-- List All Schedule -->
+            <a type="button" data-toggle="collapse" class="p-3" href="#schLister" role="button" aria-expanded="false" aria-controls="schLister">
+            <i class="fa fa-calendar-check text-info pt-3 mt-3"></i> All Schedule
+          </a>   
+          <div class="collapse" id ="schLister">
+            <div class="card card-body">
+              <form action="" method="POST" autocomplete="off">
+              <select class="form-control">
+                <?php 
+                     $linker = mysqli_query($conn, "SELECT * FROM tblschedule;");
+                     while($schedule_record = mysqli_fetch_assoc($linker)) {
+                      echo "<option value='".$schedule_record["schedule_id"]."'><span class='pl-5 pr-5'>".$schedule_record["origin_location"]."  ->   ".$schedule_record["destination_location"]." &nbsp;&nbsp;</span><span>".$schedule_record["departure_date"]." &nbsp;&nbsp; ".$schedule_record["departure_time"]."</span></option>";
+                    }
+                  ?>
+              </select>
+              </form>
+            </div>
+          </div>
+          <hr/>  
+          <!-- List All Schedule -->          
+
           <!-- Schedule Search -->
           <div class="mt-3 ml-5 mb-5 mr-5">
             <!-- Error message -->
@@ -191,7 +213,6 @@
             <?php } ?>
             <!-- Error message -->
             <form action="anasayfa.php" method="POST" autocomplete="off">
-             
               <div class="row mt-3 mb-3">
                 <!-- Origin Location -->
                 <div class="col-md-4 col-sm-8 text-left mt-2 mb-2">
@@ -387,7 +408,9 @@
           if (!$main_linker)
           {
           ?>
-            <div class="alert alert-danger">No Scheduled Bus Expedition</div>
+            <div class="">
+            </div>
+            <div class="ml-5 mr-5 alert alert-danger">No Scheduled Bus Expedition</div>
         <?php
           } 
         ?>

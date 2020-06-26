@@ -46,7 +46,7 @@
               <div class="mt-3 ml-5 mb-5 mr-5">
                 <!-- Error message -->
                 <?php if(isset($_SESSION['login_control_alert_message'])) {?>
-                  <div class="alert alert-<?php echo $_SESSION['login_control_alert_message']['type']?>"> 
+                  <div class="alert alert-<?php echo $_SESSION['login_control_alert_message']['type']?>">
                     <?php echo $_SESSION['login_control_alert_message']['message']?>
                   </div>
                   <?php unset($_SESSION['login_control_alert_message'])?>
@@ -63,10 +63,10 @@
                   <div class="form-group mt-3 mb-3">
                     <label for="password-label">Password</label>
                     <input class="form-control mb-3" type="password" maxlength="10" name="password" id="password" oninput="this.value = this.value.toUpperCase()" required/>
-                    <input type="checkbox" onclick="passvisibility()">   Show Password
+                    <input type="checkbox" onclick="passvisibility()"> Show Password
                   <div>
                   <!-- Password -->
-                  <hr/> 
+                  <hr/>
                   <button type="submit" class="btn btn-block btn-primary mt-3 mb-3" style="border-radius:5px;" value="Submit" name="submit" id="submit">Log In</button>
                   <button type="reset" class="btn btn-block btn-danger mt-3 mb-3"  style="border-radius:5px;" value="Reset">Reset</button>
                 </form>
@@ -88,6 +88,6 @@
         else
           clck.type = "password";
       }
-    </script>          
+    </script>
   </body>
 </html>
